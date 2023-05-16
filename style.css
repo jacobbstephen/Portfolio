@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    height: 100vh;
+    width:100%;
+    background-color: #000000;
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 0.6fr 1fr;
+    color: white;
+    overflow: hidden;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    grid-area: 1/2/1/3;
+    width: 100%;
+}
+.menu a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    position: relative;
+}
+.menu-items::after{
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    background-color: hsl(0, 89%, 38%);
+    width: 0%;
+    left: 0%;
+    height: 2px;
+    transition: 0.4s;
+}
+.menu-items:hover::after{
+    width: 100%;
+}
+.social-links:hover{
+    color: hsl(0, 89%, 38%);
+    transform: scale(1.6);
+}
+.orange{
+    border: 30px solid hsl(0, 89%, 38%);
+    border-bottom: none;
+    border-right: none;
+    grid-area: 2/1/2/2;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    bottom: -14px;
+    height: 100%;
+    margin-bottom: 0;
+}
+.orange img{
+    transform: translateY(5%);
+    padding-left: 10px;
+}
+.content{
+    display: block;
+    grid-area: 2/2/2/3;
+    transform: translateY(40%);
+    font-family: 'Merriweather', serif;
+}
+.content h1{
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;
+}
+.content span{
+    font-weight: bold;
+    font-size: 80px;
+    color: hsl(0, 89%, 38%);
+    position: relative;
+}
+.content span::before{
+    content: '';
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid hsl(0, 89%, 38%) ;
+    position: absolute;
+    animation: colour 0.4s linear infinite, move 7s steps(12) infinite;
+    
+}
+@keyframes colour{
+    0%{
+        border-color: hsl(0, 89%, 38%);
+    }
+    100%{ 
+        border-color: black;
+        
+    }
+}
+@keyframes move{
+    0%{
+        left:0%;
+    }
+    100%{
+        left: 110%;
+        animation-delay: 2s;
+    }
+}
+.content p{
+    font-size: 15px;
+    width: 75%;
+    font-style: italic;
+    line-height: 20px;
+    margin-top: 2px;
+}
+.content button{
+    border-radius: 20px;
+    height: 30px;
+    width: 180px;
+    margin-top: 20px;
+    background-color: transparent;
+    border: 2px solid red;
+    color: white;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    cursor: pointer;
+}
+.content button:hover{
+    transform: scale(1.2);
+    border-color: white;
+    color: red;
+}
