@@ -85,6 +85,7 @@
     position: relative;
     bottom: -10%;
     margin: 6%;
+    margin-bottom:0%;
 }
 .content{
     display: block;
